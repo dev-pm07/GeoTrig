@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=0.1.0
+Name=GeoTrig
+Comment=GeoTrig project for geometry class
+Exec=gnome-terminal --zoom=1.75 --full-screen -e "bash -c 'java -jar $JARPATH; exit'"
+Terminal=false
+Type=Application
+Categories=Math;Trignometry;Geometry;Application;
+Icon=utilities-terminal

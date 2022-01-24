@@ -117,6 +117,8 @@ public class Main {
 	
 	public static void viewTriangle() throws InterruptedException {
 		
+		clear();
+		
 		@SuppressWarnings("resource")
 		Scanner returnS = new Scanner(System.in);
 		
@@ -147,7 +149,7 @@ public class Main {
 		
 	}
 	
-	public static void intro() {
+	public static void intro() throws InterruptedException {
 	
 		clear();
 		System.out.println("\n\n" +
@@ -174,7 +176,8 @@ public class Main {
 				+ "\n\n\n"
 				+ "						(1) Create a Right Triangle\n"
 				+ "						(2) Calculate Your Triangle\n"
-				+ "						(3) View Your Triangle\n");
+				+ "						(3) View Your Triangle\n"
+				+ "						(4) Exit Application\n\n\n");
 		System.out.print("				Choose an Option:    ");
 		
 		Scanner optionS = new Scanner(System.in);
@@ -186,14 +189,39 @@ public class Main {
 				calculateTriangle();
 			} if (option == 3) {
 				viewTriangle();
-			} if (option != 1 && option != 2 && option != 3) {
+			} if (option == 4) {
+				TimeUnit.SECONDS.sleep(3);
+				System.exit(0);
+			} if (option != 1 && option != 2 && option != 3 && option != 4) {
 				menu();
 			}
 		}
 	
-	public static void clear() {
-		System.out.print("\033[H\033[2J"); 
-		System.out.flush();
+	public static void clear() throws InterruptedException {
+		
+	    try
+	    {
+	        final String os = System.getProperty("os.name");
+
+	        if (os.contains("Windows"))
+	        {
+	            Runtime.getRuntime().exec("cls");
+	        }
+	        else
+	        {
+	    		System.out.print("\033[H\033[2J"); 
+	    		System.out.flush();
+	        }
+	    }
+	    catch (final Exception e)
+	    {
+	    	
+	        System.out.println("Your System cannot support this program, sorry :(");
+			TimeUnit.SECONDS.sleep(3);
+			System.exit(0);
+			
+	    }
+	    
 	}
 		
 	}
