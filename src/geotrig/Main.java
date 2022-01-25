@@ -61,12 +61,6 @@ public class Main {
 		
 		triangle = triangle1;
 		
-		System.out.println(triangle.a);
-		System.out.println(triangle.b);
-		System.out.println(triangle.c);
-		System.out.println(triangle.A);
-		System.out.println(triangle.C);
-		
 		menu();
 			
 	}
@@ -104,6 +98,34 @@ public class Main {
 			triangle.a = Math.sqrt(c2 - b2);
 			triangle.C = Math.toDegrees(Math.acos(triangle.b / triangle.c));
 			triangle.A = 180 - (triangle.B + triangle.C);
+			
+		} /*One Side, One Angle Instances*/ else
+			
+		//Instance 4
+		if (triangle.A != 0 && triangle.a != 0) {
+			
+			triangle.C = 180 - (triangle.A + triangle.B);
+			triangle.b = triangle.a*Math.tan(Math.toRadians(triangle.A));
+			triangle.c = triangle.a / Math.cos(Math.toRadians(triangle.A));
+			
+			
+		} else
+			
+		//Instance 5 
+		if (triangle.A != 0 && triangle.b != 0) {
+			
+			triangle.c = 180 - (triangle.A + triangle.B);
+			triangle.a = triangle.c*(Math.sin(Math.toRadians(triangle.C)));
+			triangle.c = triangle.b*(1/(Math.cos(Math.toRadians(triangle.C))));
+			
+		} else
+		
+		//Instance 6
+		if (triangle.A != 0 && triangle.c != 0) {
+			
+			triangle.C = 180- (triangle.A + triangle.B);
+			triangle.a = triangle.c*(Math.sin(Math.toRadians(triangle.C)));
+			triangle.c = triangle.b*(1/(Math.cos(Math.toRadians(triangle.C))));
 			
 		} else {}
 		
