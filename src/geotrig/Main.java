@@ -123,11 +123,39 @@ public class Main {
 		//Instance 6
 		if (triangle.A != 0 && triangle.c != 0) {
 			
-			triangle.C = 180- (triangle.A + triangle.B);
+			triangle.C = 180 - (triangle.A + triangle.B);
 			triangle.a = triangle.c*(Math.sin(Math.toRadians(triangle.C)));
-			triangle.c = triangle.b*(1/(Math.cos(Math.toRadians(triangle.C))));
+			triangle.b = triangle.c*(Math.sin(Math.toRadians(triangle.A)));
 			
-		} else {}
+		} else
+	
+		//Instance 7
+		if (triangle.C != 0 && triangle.a != 0) {
+			
+			triangle.A = 180 - (triangle.B + triangle.C);
+			triangle.b = triangle.a*Math.tan(Math.toRadians(triangle.A));
+			triangle.c = triangle.b*(1/Math.cos(Math.toRadians(triangle.c)));
+			
+		} else
+			
+		//Instance 8
+		if (triangle.C != 0 && triangle.b != 0) {
+			
+			triangle.A = 180 - (triangle.B + triangle.C);
+			triangle.a = triangle.b*Math.tan(Math.toRadians(triangle.C));
+			triangle.c = triangle.a*(1/Math.cos(Math.toRadians(triangle.A)));
+			
+		} else
+			
+		//Instance 9
+		if (triangle.C != 0 && triangle.c != 0) {
+			
+			triangle.A = 180 - (triangle.B + triangle.C);
+			triangle.a = triangle.b*(1/(Math.tan(Math.toRadians(triangle.A))));
+			triangle.b = triangle.a*(Math.tan(triangle.A));
+			
+		}
+		else {}
 		
 		clear();
 		TimeUnit.SECONDS.sleep(3);
