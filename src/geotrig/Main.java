@@ -134,7 +134,7 @@ public class Main {
 			
 			triangle.A = 180 - (triangle.B + triangle.C);
 			triangle.b = triangle.a*Math.tan(Math.toRadians(triangle.A));
-			triangle.c = triangle.b*(1/Math.cos(Math.toRadians(triangle.c)));
+			triangle.c = triangle.b*(1/Math.cos(Math.toRadians(triangle.C)));
 			
 		} else
 			
@@ -143,7 +143,7 @@ public class Main {
 			
 			triangle.A = 180 - (triangle.B + triangle.C);
 			triangle.a = triangle.b*Math.tan(Math.toRadians(triangle.C));
-			triangle.c = triangle.a*(1/Math.cos(Math.toRadians(triangle.A)));
+			triangle.c = triangle.a*(1/Math.cos(triangle.A));
 			
 		} else
 			
@@ -172,6 +172,15 @@ public class Main {
 		@SuppressWarnings("resource")
 		Scanner returnS = new Scanner(System.in);
 		
+		if ( triangle.C < 0 || triangle.A < 0 || triangle.a < 0 || triangle.b < 0 || triangle.c < 0 ) {
+			
+			clear();
+			System.out.println("One or more of your inputs are negative, please recreate your\ntriangle to calculate it");
+			TimeUnit.SECONDS.sleep(3);
+			menu();
+			
+		} else if ( triangle.C >= 0 || triangle.A >= 0 || triangle.a >= 0 || triangle.b >= 0 || triangle.c >= 0 ) {
+		
 		System.out.println("	  A	\n"
 				+ "	  |\\\n"
 				+ "	  | \\\n"
@@ -196,6 +205,7 @@ public class Main {
 		nothing = null;
 		
 		menu();
+		}
 		
 	}
 	
@@ -253,7 +263,7 @@ public class Main {
 	    {
 	        final String os = System.getProperty("os.name");
 
-	        if (os.contains("Windows"))
+	        if (os.contains("windows"))
 	        {
 	            Runtime.getRuntime().exec("cls");
 	        }
