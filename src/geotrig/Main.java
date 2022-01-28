@@ -67,6 +67,8 @@ public class Main {
 	
 	public static void calculateTriangle() throws InterruptedException {
 		
+		if ( triangle.a >= 0 && triangle.b >= 0 && triangle.c >= 0 && triangle.A >= 0 && triangle.C >= 0 ) {
+		
 		double a2 = Math.pow(triangle.a, 2);
 		double b2 = Math.pow(triangle.b, 2);
 		double c2 = Math.pow(triangle.c, 2);
@@ -143,7 +145,7 @@ public class Main {
 			
 			triangle.A = 180 - (triangle.B + triangle.C);
 			triangle.a = triangle.b*Math.tan(Math.toRadians(triangle.C));
-			triangle.c = triangle.a*(1/Math.cos(triangle.A));
+			triangle.c = triangle.a*(1/Math.cos(Math.toRadians(triangle.A)));
 			
 		} else
 			
@@ -151,8 +153,8 @@ public class Main {
 		if (triangle.C != 0 && triangle.c != 0) {
 			
 			triangle.A = 180 - (triangle.B + triangle.C);
-			triangle.a = triangle.b*(1/(Math.tan(Math.toRadians(triangle.A))));
-			triangle.b = triangle.a*(Math.tan(triangle.A));
+			triangle.a = triangle.c*(Math.sin(Math.toRadians(triangle.C)));
+			triangle.b = triangle.a*(Math.tan(Math.toRadians(triangle.A)));
 			
 		}
 		else {}
@@ -162,6 +164,16 @@ public class Main {
 		System.out.println("Calculation Completed Successfully");
 		TimeUnit.SECONDS.sleep(1);
 		menu();
+		
+		} 
+	else if ( triangle.a < 0 || triangle.b < 0 || triangle.c < 0 || triangle.A < 0 || triangle.C < 0 ) {
+
+			clear();
+			System.out.println("Your triangle is not created or one ore more of the inputs are negative");
+			TimeUnit.SECONDS.sleep(2);
+			menu();
+			
+		} else {}
 		
 	}
 	
@@ -179,7 +191,7 @@ public class Main {
 			TimeUnit.SECONDS.sleep(3);
 			menu();
 			
-		} else if ( triangle.C >= 0 || triangle.A >= 0 || triangle.a >= 0 || triangle.b >= 0 || triangle.c >= 0 ) {
+		} else if ( triangle.C >= 0 && triangle.A >= 0 && triangle.a >= 0 && triangle.b >= 0 && triangle.c >= 0 ) {
 		
 		System.out.println("	  A	\n"
 				+ "	  |\\\n"
