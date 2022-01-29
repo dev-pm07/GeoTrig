@@ -132,8 +132,8 @@ public class Main {
 			if (triangle.A != 0 && triangle.b != 0) {
 				
 				triangle.C = 180 - (triangle.A + triangle.B);
-				triangle.a = triangle.c*(Math.sin(Math.toRadians(triangle.C)));
 				triangle.c = triangle.b*(1/(Math.cos(Math.toRadians(triangle.C))));
+				triangle.a = triangle.c*(Math.sin(Math.toRadians(triangle.C)));
 				
 			} else
 			
