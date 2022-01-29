@@ -66,40 +66,22 @@ public class Main {
 	}
 	
 	public static void calculateTriangle() throws InterruptedException {
-		
-<<<<<<< HEAD
-		if ( triangle.a >= 0 && triangle.b >= 0 && triangle.c >= 0 && triangle.A >= 0 && triangle.C >= 0 ) {
-		
-		double a2 = Math.pow(triangle.a, 2);
-		double b2 = Math.pow(triangle.b, 2);
-		double c2 = Math.pow(triangle.c, 2);
-		
-		//Two Side Instances
-		
-		//Instance 1
-		if (triangle.a != 0 && triangle.b != 0) {
-			
-			triangle.c = Math.sqrt(a2 + b2);
-			triangle.A = Math.toDegrees(Math.atan(triangle.b / triangle.a)); 
-			triangle.C = 180 - (triangle.A + triangle.B);
-=======
+
 		if (triangle == null) {
->>>>>>> main
 			
 			clear();
-	        System.out.println("Please create a triangle before calculating it\nCommon sense people!");
+	        System.out.println("Please create a triangle before calculating it.");
 			TimeUnit.SECONDS.sleep(3);
 			menu();
 			
 		} else if (triangle != null) {
 			
-		if ( triangle.C < 0 || triangle.A < 0 || triangle.a < 0 || triangle.b < 0 || triangle.c < 0 ) {
-						
+		if ( triangle.a < 0 || triangle.b < 0  || triangle.c < 0 || triangle.A < 0 || triangle.C < 0 ) {						
 						clear();
 						System.out.println("One or more of your inputs are negative, please recreate your\ntriangle to calculate it");
 						TimeUnit.SECONDS.sleep(3);
 						menu();
-		} else if (triangle.C >= 0 || triangle.A >= 0 || triangle.a >= 0 || triangle.b >= 0 || triangle.c >= 0 ) {
+		} else if ( triangle.a >= 0 && triangle.b >= 0 && triangle.c >= 0 && triangle.A >= 0 && triangle.C >= 0 ) {
 			
 		
 			double a2 = Math.pow(triangle.a, 2);
@@ -149,7 +131,7 @@ public class Main {
 			//Instance 5 
 			if (triangle.A != 0 && triangle.b != 0) {
 				
-				triangle.c = 180 - (triangle.A + triangle.B);
+				triangle.C = 180 - (triangle.A + triangle.B);
 				triangle.a = triangle.c*(Math.sin(Math.toRadians(triangle.C)));
 				triangle.c = triangle.b*(1/(Math.cos(Math.toRadians(triangle.C))));
 				
@@ -178,7 +160,7 @@ public class Main {
 				
 				triangle.A = 180 - (triangle.B + triangle.C);
 				triangle.a = triangle.b*Math.tan(Math.toRadians(triangle.C));
-				triangle.c = triangle.a*(1/Math.cos(triangle.A));
+				triangle.c = triangle.a*(1/Math.cos(Math.toRadians(triangle.A)));
 				
 			} else
 				
@@ -186,52 +168,13 @@ public class Main {
 			if (triangle.C != 0 && triangle.c != 0) {
 				
 				triangle.A = 180 - (triangle.B + triangle.C);
-				triangle.a = triangle.b*(1/(Math.tan(Math.toRadians(triangle.A))));
-				triangle.b = triangle.a*(Math.tan(triangle.A));
+				triangle.a = triangle.c*(Math.cos(Math.toRadians(triangle.A)));
+				triangle.b = triangle.a*(Math.tan(Math.toRadians(triangle.A)));
 				
 			}
 			else {}
 		
-<<<<<<< HEAD
-		//Instance 6
-		if (triangle.A != 0 && triangle.c != 0) {
-			
-			triangle.C = 180 - (triangle.A + triangle.B);
-			triangle.a = triangle.c*(Math.sin(Math.toRadians(triangle.C)));
-			triangle.b = triangle.c*(Math.sin(Math.toRadians(triangle.A)));
-			
-		} else
-	
-		//Instance 7
-		if (triangle.C != 0 && triangle.a != 0) {
-			
-			triangle.A = 180 - (triangle.B + triangle.C);
-			triangle.b = triangle.a*Math.tan(Math.toRadians(triangle.A));
-			triangle.c = triangle.b*(1/Math.cos(Math.toRadians(triangle.C)));
-			
-		} else
-			
-		//Instance 8
-		if (triangle.C != 0 && triangle.b != 0) {
-			
-			triangle.A = 180 - (triangle.B + triangle.C);
-			triangle.a = triangle.b*Math.tan(Math.toRadians(triangle.C));
-			triangle.c = triangle.a*(1/Math.cos(Math.toRadians(triangle.A)));
-			
-		} else
-			
-		//Instance 9
-		if (triangle.C != 0 && triangle.c != 0) {
-			
-			triangle.A = 180 - (triangle.B + triangle.C);
-			triangle.a = triangle.c*(Math.sin(Math.toRadians(triangle.C)));
-			triangle.b = triangle.a*(Math.tan(Math.toRadians(triangle.A)));
-			
-		}
-		else {}
-=======
 		} else {}
->>>>>>> main
 		
 		clear();
 		TimeUnit.SECONDS.sleep(3);
@@ -239,55 +182,12 @@ public class Main {
 		TimeUnit.SECONDS.sleep(1);
 		menu();
 		
-<<<<<<< HEAD
 		} 
-	else if ( triangle.a < 0 || triangle.b < 0 || triangle.c < 0 || triangle.A < 0 || triangle.C < 0 ) {
-
-			clear();
-			System.out.println("Your triangle is not created or one ore more of the inputs are negative");
-			TimeUnit.SECONDS.sleep(2);
-			menu();
-			
-		} else {}
-=======
 		}
->>>>>>> main
 		
-	}
 	
 	public static void viewTriangle() throws InterruptedException {
-		
-		if (triangle == null) {
-			
-			clear();
-	        System.out.println("Please create a triangle before calculating it\nCommon sense people!");
-			TimeUnit.SECONDS.sleep(3);
-			menu();
-			
-<<<<<<< HEAD
-		} else if ( triangle.C >= 0 && triangle.A >= 0 && triangle.a >= 0 && triangle.b >= 0 && triangle.c >= 0 ) {
-		
-		System.out.println("	  A	\n"
-				+ "	  |\\\n"
-				+ "	  | \\\n"
-				+ "	  |  \\  c\n"
-				+ "       a  |   \\\n"
-				+ "	  |    \\\n"
-				+ "	  |_____\\\n"
-				+ "	 B   b   C\n\n");
-		System.out.println("The reference diagram is above. Calculations are shown below:\n");
-		System.out.println("Side a length:    " + triangle.a);
-		System.out.println("Side b length:    " + triangle.b);
-		System.out.println("Side c length:    " + triangle.c);
-		System.out.println("Angle A measurement:    " + triangle.A + "°");
-		System.out.println("Angle B measurement:    " + triangle.B + "°");
-		System.out.println("Angle C measurement:    " + triangle.C + "°\n\n\n");
-		
-		TimeUnit.SECONDS.sleep(3);
-		System.out.print("When you are ready to leave, press return:   ");
-=======
-		} else if (triangle != null) {
->>>>>>> main
+
 		
 			clear();
 			
@@ -297,11 +197,11 @@ public class Main {
 			if ( triangle.C < 0 || triangle.A < 0 || triangle.a < 0 || triangle.b < 0 || triangle.c < 0 ) {
 				
 				clear();
-				System.out.println("One or more of your inputs are negative, please recreate your\ntriangle to calculate it");
+				System.out.println("One or more of your inputs are negative, please recreate your triangle to calculate it");
 				TimeUnit.SECONDS.sleep(3);
 				menu();
 				
-			} else if ( triangle.C >= 0 || triangle.A >= 0 || triangle.a >= 0 || triangle.b >= 0 || triangle.c >= 0 ) {
+			} else if ( triangle.C >= 0 && triangle.A >= 0 && triangle.a >= 0 && triangle.b >= 0 && triangle.c >= 0 ) {
 			
 			System.out.println("	  A	\n"
 					+ "	  |\\\n"
@@ -327,11 +227,17 @@ public class Main {
 			nothing = null;
 			
 			menu();
+			} else if (triangle != null) {
+				
+				clear();
+				System.out.println("Please create a triangle first.");
+				TimeUnit.SECONDS.sleep(3);
+				menu();
 			} else {}
 		
 		}
 		
-	}
+	
 	
 	public static void intro() throws InterruptedException {
 	
